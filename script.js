@@ -41,45 +41,8 @@ document.getElementById("setReminder").addEventListener("click", () => {
   }
 });
 
-// Save Favorite Facts
-document.getElementById("saveFavoriteFact").addEventListener("click", () => {
-  const mood = document.getElementById("mood").value;
-  const randomFact =
-    facts[mood][Math.floor(Math.random() * facts[mood].length)];
-  let favorites = localStorage.getItem("favorites") || "";
-  
-  // Add the new favorite fact with a remove button
-  const newFactHtml = `
-    <div class="favorite-fact">
-      <p>${randomFact}</p>
-      <button class="remove-favorite">Remove</button>
-    </div>
-  `;
-  
-  favorites += newFactHtml;
-  localStorage.setItem("favorites", favorites);
-  displayFavorites(); // Display the updated list of favorites
+// Unlock Interesting Fact
+document.getElementById("unlockInterestingFact").addEventListener("click", () => {
+  document.getElementById("interestingFact").innerText =
+    "Did you know? Honey never spoils! Archaeologists have found pots of honey in ancient tombs that are over 3000 years old and still perfectly edible!";
 });
-
-// Remove Favorite Fact
-document.addEventListener("click", function (event) {
-  if (event.target && event.target.classList.contains("remove-favorite")) {
-    const factElement = event.target.parentElement;
-    factElement.remove();
-
-    // Update the local storage to reflect the removal
-    let favorites = localStorage.getItem("favorites") || "";
-    favorites = favorites.replace(factElement.outerHTML, "");
-    localStorage.setItem("favorites", favorites);
-  }
-});
-
-// Display Saved Favorites on page load
-window.addEventListener("load", () => {
-  displayFavorites();
-});
-
-function displayFavorites() {
-  const favorites = localStorage.getItem("favorites") || "";
-  document.getElementById("favoritesList").innerHTML = favorites;
-}
