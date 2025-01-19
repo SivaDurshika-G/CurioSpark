@@ -49,5 +49,29 @@
     </div>
 
 </div>
+// Modal functionality for Thank You message
+var thankYouModal = document.getElementById("thankYouModal");
+var startBtn = document.getElementById("startBtn");
+var closeBtn = document.getElementById("closeBtn");
+var span = document.getElementsByClassName("close")[0];
+
+startBtn.onclick = function() {
+    thankYouModal.style.display = "block";
+}
+
+span.onclick = function() {
+    thankYouModal.style.display = "none";
+}
+
+closeBtn.onclick = function() {
+    thankYouModal.style.display = "none";
+}
+
+// Click outside to close modal
+window.onclick = function(event) {
+    if (event.target == thankYouModal) {
+        thankYouModal.style.display = "none";
+    }
+}
 </body>
 </html>
