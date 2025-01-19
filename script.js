@@ -10,22 +10,17 @@ const quotes = [
   "Believe you can and you're halfway there.",
 ];
 
-const triviaFacts = [
-  "Did you know? The Eiffel Tower can be 15 cm taller during summer due to thermal expansion!",
-  "Bananas are technically berries, but strawberries are not!",
-  "A day on Venus is longer than a year on Venus!",
-];
-
 // Unlock Daily Fact
 document.getElementById("unlockFact").addEventListener("click", () => {
-  document.getElementById("dailyFact").innerText = 
+  document.getElementById("dailyFact").innerText =
     "Did you know? The Eiffel Tower can be 15 cm taller during summer due to thermal expansion!";
 });
 
 // Generate Mood Fact
 document.getElementById("generateMoodFact").addEventListener("click", () => {
   const mood = document.getElementById("mood").value;
-  const randomFact = facts[mood][Math.floor(Math.random() * facts[mood].length)];
+  const randomFact =
+    facts[mood][Math.floor(Math.random() * facts[mood].length)];
   document.getElementById("moodFactDisplay").innerText = randomFact;
 });
 
@@ -46,11 +41,19 @@ document.getElementById("setReminder").addEventListener("click", () => {
   }
 });
 
-// Generate Trivia Fact
-document.getElementById("generateTrivia").addEventListener("click", () => {
-  const randomTrivia = triviaFacts[Math.floor(Math.random() * triviaFacts.length)];
-  const triviaElement = document.getElementById("triviaFact");
-  
-  // Ensure the trivia is displayed properly
-  triviaElement.innerText = randomTrivia ? randomTrivia : "No trivia fact available.";
+// Save Favorite Facts
+document.getElementById("saveFavoriteFact").addEventListener("click", () => {
+  const mood = document.getElementById("mood").value;
+  const randomFact =
+    facts[mood][Math.floor(Math.random() * facts[mood].length)];
+  let favorites = localStorage.getItem("favorites") || "";
+  favorites += `<p>${randomFact}</p>`;
+  localStorage.setItem("favorites", favorites);
+  document.getElementById("favoritesList").innerHTML = favorites;
+});
+
+// Display Saved Favorites on page load
+window.addEventListener("load", () => {
+  const favorites = localStorage.getItem("favorites") || "";
+  document.getElementById("favoritesList").innerHTML = favorites;
 });
