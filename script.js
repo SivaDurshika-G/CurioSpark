@@ -47,10 +47,33 @@ document.getElementById("saveFavoriteFact").addEventListener("click", () => {
   const randomFact =
     facts[mood][Math.floor(Math.random() * facts[mood].length)];
   let favorites = localStorage.getItem("favorites") || "";
-  favorites += `<p>${randomFact}</p>`;
+
+  // Generate a unique ID for each saved favorite fact
+  const factId = `fact-${Date.now()}`;
+  const factHTML = `
+    <div id="${factId}">
+      <p>${randomFact}</p>
+      <button onclick="removeFavorite('${factId}')">Remove</button>
+    </div>
+  `;
+  
+  favorites += factHTML;
   localStorage.setItem("favorites", favorites);
   document.getElementById("favoritesList").innerHTML = favorites;
 });
+
+// **Remove Favorite Fact Function**
+function removeFavorite(factId) {
+  let favorites = localStorage.getItem("favorites") || "";
+  const factToRemove = document.getElementById(factId);
+  
+  // Remove the specific fact from the list
+  if (factToRemove) {
+    favorites = favorites.replace(factToRemove.outerHTML, "");
+    localStorage.setItem("favorites", favorites);
+    document.getElementById("favoritesList").innerHTML = favorites;
+  }
+}
 
 // Display Saved Favorites on page load
 window.addEventListener("load", () => {
