@@ -130,3 +130,93 @@ h1, p {
 html {
     scroll-behavior: smooth;
 }
+/* 1. Bounce effect on load */
+@keyframes bounceIn {
+    0% {
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+    60% {
+        transform: translateY(30px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.button, .cta {
+    animation: bounceIn 1s ease-out;
+}
+
+/* 2. Slide in from left */
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.sidebar {
+    animation: slideInLeft 1s ease-out;
+}
+
+/* 3. Pulse effect */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.button, .icon {
+    animation: pulse 2s infinite;
+}
+
+/* 4. Fade-in effect on scroll */
+@keyframes fadeInOnScroll {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section, .image {
+    opacity: 0;
+    animation: fadeInOnScroll 1s ease-in-out;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.section.visible, .image.visible {
+    animation-name: fadeInOnScroll;
+    animation-play-state: running;
+}
+
+/* 5. Zoom-in effect on hover */
+.card, .image {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover, .image:hover {
+    transform: scale(1.1);
+}
+
+/* 6. Rotate effect on hover */
+.icon:hover {
+    transform: rotate(360deg);
+    transition: transform 0.5s ease-in-out;
+}
