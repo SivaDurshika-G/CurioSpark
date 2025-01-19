@@ -27,6 +27,7 @@ document.getElementById("generateMoodFact").addEventListener("click", () => {
 // Get Daily Quote
 document.getElementById("getQuote").addEventListener("click", () => {
   const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  console.log("Quote:", randomQuote); // Debugging log to check if this line works
   document.getElementById("quoteDisplay").innerText = randomQuote;
 });
 
