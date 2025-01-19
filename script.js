@@ -35,7 +35,6 @@ document.getElementById("setReminder").addEventListener("click", () => {
   const reminderTime = document.getElementById("reminderTime").value;
   if (reminderTime) {
     alert(`Reminder set for: ${reminderTime}`);
-    localStorage.setItem("reminderTime", reminderTime);
   } else {
     alert("Please set a valid time.");
   }
@@ -46,14 +45,12 @@ document.getElementById("saveFavoriteFact").addEventListener("click", () => {
   const mood = document.getElementById("mood").value;
   const randomFact =
     facts[mood][Math.floor(Math.random() * facts[mood].length)];
-  let favorites = localStorage.getItem("favorites") || "";
-  favorites += `<p>${randomFact}</p>`;
-  localStorage.setItem("favorites", favorites);
-  document.getElementById("favoritesList").innerHTML = favorites;
+  const favoritesList = document.getElementById("favoritesList");
+  favoritesList.innerHTML += `<p>${randomFact}</p>`;
 });
 
 // Display Saved Favorites on page load
 window.addEventListener("load", () => {
-  const favorites = localStorage.getItem("favorites") || "";
-  document.getElementById("favoritesList").innerHTML = favorites;
+  const favoritesList = document.getElementById("favoritesList");
+  favoritesList.innerHTML = '';  // Clear existing favorites (if any)
 });
