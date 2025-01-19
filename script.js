@@ -49,5 +49,8 @@ document.getElementById("setReminder").addEventListener("click", () => {
 // Generate Trivia Fact
 document.getElementById("generateTrivia").addEventListener("click", () => {
   const randomTrivia = triviaFacts[Math.floor(Math.random() * triviaFacts.length)];
-  document.getElementById("triviaFact").innerText = randomTrivia;
+  const triviaElement = document.getElementById("triviaFact");
+  
+  // Ensure the trivia is displayed properly
+  triviaElement.innerText = randomTrivia ? randomTrivia : "No trivia fact available.";
 });
