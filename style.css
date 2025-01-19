@@ -20,11 +20,10 @@ button {
   font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
-  margin: 10px;
 }
 
 button:hover {
-  background: #ff7733;
+  background: #ff7f4f;
 }
 
 .fact-card {
@@ -35,20 +34,28 @@ button:hover {
   margin: 20px;
 }
 
-select {
-  padding: 5px;
-  margin: 10px;
-  font-size: 1rem;
-}
-
-input[type="time"] {
-  padding: 5px;
-  margin: 10px;
-}
-
 #favoritesList {
   margin-top: 20px;
-  background-color: #fff;
+}
+
+#favoritesList div {
+  background: #fff;
   padding: 10px;
   border-radius: 5px;
+  margin: 10px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#favoritesList button {
+  background: #ff6666;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#favoritesList button:hover {
+  background: #ff4c4c;
 }
