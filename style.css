@@ -220,3 +220,25 @@ html {
     transform: rotate(360deg);
     transition: transform 0.5s ease-in-out;
 }
+/* Applying color to text */
+.text-primary {
+    color: #FF5733;  /* Red */
+}
+
+.text-secondary {
+    color: #6F42C1;  /* Purple */
+}
+
+/* Background color */
+.bg-primary {
+    background-color: #007BFF;  /* Blue */
+}
+
+.bg-secondary {
+    background-color: #FFD700;  /* Yellow */
+}
+
+/* Hover effect */
+.button:hover {
+    background-color: #20C997;  /* Teal */
+}
