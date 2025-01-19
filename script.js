@@ -1,7 +1,7 @@
 const facts = {
-  happy: ["Smiling boosts your mood!", "Happiness is contagious!"],
-  curious: ["Bananas are berries!", "Octopuses have three hearts!"],
-  motivated: ["Believe in yourself!", "Hard work always pays off!"],
+  happy: ["😃 Smiling boosts your mood! ✨", "🤩 Happiness is contagious! 🌝"],
+  curious: ["🍌 Bananas are berries, but strawberries aren't! 🍓", "🐙 Octopuses have three hearts and blue blood! 💙"],
+  motivated: ["💪 Believe in yourself! ✨", "💪Hard work always pays off!✨"],
 };
 
 document.getElementById("unlockFact").addEventListener("click", () => {
