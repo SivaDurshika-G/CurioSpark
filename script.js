@@ -10,17 +10,22 @@ const quotes = [
   "Believe you can and you're halfway there.",
 ];
 
+const triviaFacts = [
+  "Did you know? The Eiffel Tower can be 15 cm taller during summer due to thermal expansion!",
+  "Bananas are technically berries, but strawberries are not!",
+  "A day on Venus is longer than a year on Venus!",
+];
+
 // Unlock Daily Fact
 document.getElementById("unlockFact").addEventListener("click", () => {
-  document.getElementById("dailyFact").innerText =
+  document.getElementById("dailyFact").innerText = 
     "Did you know? The Eiffel Tower can be 15 cm taller during summer due to thermal expansion!";
 });
 
 // Generate Mood Fact
 document.getElementById("generateMoodFact").addEventListener("click", () => {
   const mood = document.getElementById("mood").value;
-  const randomFact =
-    facts[mood][Math.floor(Math.random() * facts[mood].length)];
+  const randomFact = facts[mood][Math.floor(Math.random() * facts[mood].length)];
   document.getElementById("moodFactDisplay").innerText = randomFact;
 });
 
@@ -35,32 +40,14 @@ document.getElementById("setReminder").addEventListener("click", () => {
   const reminderTime = document.getElementById("reminderTime").value;
   if (reminderTime) {
     alert(`Reminder set for: ${reminderTime}`);
+    localStorage.setItem("reminderTime", reminderTime);
   } else {
     alert("Please set a valid time.");
   }
 });
 
-// Save Favorite Facts
-let favoriteFacts = []; // Store the facts temporarily in the current session
-
-document.getElementById("saveFavoriteFact").addEventListener("click", () => {
-  const mood = document.getElementById("mood").value;
-  const randomFact =
-    facts[mood][Math.floor(Math.random() * facts[mood].length)];
-  
-  // Add the new fact to the temporary array
-  favoriteFacts.push(randomFact);
-  
-  // Display the updated list of favorite facts in the favoritesList
-  const favoritesList = document.getElementById("favoritesList");
-  favoritesList.innerHTML = ''; // Clear current list before updating
-  favoriteFacts.forEach(fact => {
-    favoritesList.innerHTML += `<p>${fact}</p>`;
-  });
-});
-
-// Reset the favorites list on page load (no persistence, just session-based)
-window.addEventListener("load", () => {
-  const favoritesList = document.getElementById("favoritesList");
-  favoritesList.innerHTML = '';  // Reset the list on page reload
+// Generate Trivia Fact
+document.getElementById("generateTrivia").addEventListener("click", () => {
+  const randomTrivia = triviaFacts[Math.floor(Math.random() * triviaFacts.length)];
+  document.getElementById("triviaFact").innerText = randomTrivia;
 });
