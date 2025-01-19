@@ -1,5 +1,5 @@
 const facts = {
-  happy: ["😃 Smiling boosts your mood! ✨", "🤩 Happiness is contagious! 🌝", "Smiling is contagious!" 😄😊,
+  happy: ["Smiling boosts your mood! 😃✨", "Smiling is contagious!" 😄😊,
 Smiling can make others smile, spreading happiness,
 
 "Laughter reduces stress." 😂🧘‍♀️,
