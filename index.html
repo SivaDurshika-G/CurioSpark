@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Spark</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>🌟 Daily Spark 🌟</h1>
+      <p>Your daily dose of insights and inspiration!</p>
+    </header>
+
+    <section class="calendar-section">
+      <h2>📅 Today's Spark</h2>
+      <div id="dailyFact" class="fact-card">Click below to unlock today's spark!</div>
+      <button id="unlockFact">Unlock</button>
+    </section>
+
+    <section class="mood-section">
+      <h2>💡 Get a Mood-Based Fact</h2>
+      <label for="mood">Choose Your Mood:</label>
+      <select id="mood">
+        <option value="happy">Happy</option>
+        <option value="curious">Curious</option>
+        <option value="motivated">Motivated</option>
+      </select>
+      <button id="generateMoodFact">Generate</button>
+      <div id="moodFactDisplay"></div>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
