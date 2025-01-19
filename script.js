@@ -1,5 +1,5 @@
 const facts = {
-  happy: ["Smiling boosts your mood! 😃✨", "Smiling is contagious!" 😄😊,
+  happy: ["Smiling is contagious!" 😄😊,
 Smiling can make others smile, spreading happiness,
 
 "Laughter reduces stress." 😂🧘‍♀️,
@@ -66,16 +66,14 @@ Exploring new places or trying new things brings joy and excitement,
 Even a few minutes of dancing can elevate your mood instantly,
 
 "You are amazing just as you are." 🌟💫,
-Remind yourself that you're unique and valuable, always deserving of happiness,
-],
-  curious: ["🍌 Bananas are berries, but strawberries aren't! 🍓", "🐙 Octopuses have three hearts and blue blood! 💙"],
-  motivated: ["💪 Believe in yourself! ✨", "💪Hard work always pays off!✨"],
-  
+Remind yourself that you're unique and valuable, always deserving of happiness,],
+  curious: ["Bananas are berries!", "Octopuses have three hearts!"],
+  motivated: ["Believe in yourself!", "Hard work always pays off!"],
 };
 
 document.getElementById("unlockFact").addEventListener("click", () => {
   document.getElementById("dailyFact").innerText =
-    "🤔 Did you know? 🗼 The Eiffel Tower can be 15 cm taller during summer due to thermal expansion! 🌇";
+    "Did you know? The Eiffel Tower can be 15 cm taller during summer due to thermal expansion!";
 });
 
 document.getElementById("generateMoodFact").addEventListener("click", () => {
