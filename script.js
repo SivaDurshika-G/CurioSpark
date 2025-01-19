@@ -11,7 +11,9 @@ document.getElementById("unlockFact").addEventListener("click", () => {
 
 document.getElementById("generateMoodFact").addEventListener("click", () => {
   const mood = document.getElementById("mood").value;
+  console.log("Mood selected:", mood); // Debugging line
   const randomFact =
     facts[mood][Math.floor(Math.random() * facts[mood].length)];
+  console.log("Random Fact:", randomFact); // Debugging line
   document.getElementById("moodFactDisplay").innerText = randomFact;
 });
