@@ -47,36 +47,45 @@ document.getElementById("saveFavoriteFact").addEventListener("click", () => {
   const randomFact =
     facts[mood][Math.floor(Math.random() * facts[mood].length)];
   let favorites = localStorage.getItem("favorites") || "";
-
-  // Generate a unique ID for each saved favorite fact
-  const factId = `fact-${Date.now()}`;
-  const factHTML = `
-    <div id="${factId}">
+  
+  // Create a new fact with a remove button
+  const factWithButton = `
+    <div class="favorite-item">
       <p>${randomFact}</p>
-      <button onclick="removeFavorite('${factId}')">Remove</button>
+      <button class="remove-favorite">Remove</button>
     </div>
   `;
   
-  favorites += factHTML;
+  favorites += factWithButton;
   localStorage.setItem("favorites", favorites);
   document.getElementById("favoritesList").innerHTML = favorites;
-});
-
-// **Remove Favorite Fact Function**
-function removeFavorite(factId) {
-  let favorites = localStorage.getItem("favorites") || "";
-  const factToRemove = document.getElementById(factId);
   
-  // Remove the specific fact from the list
-  if (factToRemove) {
-    favorites = favorites.replace(factToRemove.outerHTML, "");
-    localStorage.setItem("favorites", favorites);
-    document.getElementById("favoritesList").innerHTML = favorites;
-  }
-}
+  // Rebind the remove buttons to each saved fact
+  addRemoveListeners();
+});
 
 // Display Saved Favorites on page load
 window.addEventListener("load", () => {
   const favorites = localStorage.getItem("favorites") || "";
   document.getElementById("favoritesList").innerHTML = favorites;
+  
+  // Add remove listeners to any existing facts
+  addRemoveListeners();
 });
+
+// Function to add remove listeners to each saved fact
+function addRemoveListeners() {
+  const removeButtons = document.querySelectorAll('.remove-favorite');
+  
+  removeButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      const factDiv = e.target.parentElement;
+      factDiv.remove();  // Remove the fact item from the list
+
+      // Remove the fact from localStorage
+      let favorites = localStorage.getItem("favorites") || "";
+      favorites = favorites.replace(factDiv.outerHTML, "");
+      localStorage.setItem("favorites", favorites);
+    });
+  });
+}
