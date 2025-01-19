@@ -20,6 +20,11 @@ button {
   font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
+  margin: 10px;
+}
+
+button:hover {
+  background: #ff7733;
 }
 
 .fact-card {
@@ -28,4 +33,22 @@ button {
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin: 20px;
+}
+
+select {
+  padding: 5px;
+  margin: 10px;
+  font-size: 1rem;
+}
+
+input[type="time"] {
+  padding: 5px;
+  margin: 10px;
+}
+
+#favoritesList {
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
 }
