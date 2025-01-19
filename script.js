@@ -2,12 +2,12 @@ const facts = {
   happy: ["😃 Smiling boosts your mood! ✨", "🤩 Happiness is contagious! 🌝"],
   curious: ["🍌 Bananas are berries, but strawberries aren't! 🍓", "🐙 Octopuses have three hearts and blue blood! 💙"],
   motivated: ["💪 Believe in yourself! ✨", "💪Hard work always pays off!✨"],
-  Pookie: ["🚀 The moon has moonquakes, just like Earth has earthquakes! 🌑", "🦉 Owls can't move their eyeballs, so they turn their heads! 🦉"]
+  
 };
 
 document.getElementById("unlockFact").addEventListener("click", () => {
   document.getElementById("dailyFact").innerText =
-    "Did you know? The Eiffel Tower can be 15 cm taller during summer due to thermal expansion!";
+    "🤔 Did you know? 🗼 The Eiffel Tower can be 15 cm taller during summer due to thermal expansion! 🌇";
 });
 
 document.getElementById("generateMoodFact").addEventListener("click", () => {
