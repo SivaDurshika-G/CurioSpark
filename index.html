@@ -10,19 +10,13 @@
   <div class="app-container">
     <header>
       <h1>🌟 CurioSpark 🌟</h1>
-      <p>Your daily dose of insights, inspiration, and facts!</p>
+      <p>Your daily dose of insights and inspiration!</p>
     </header>
 
     <section class="calendar-section">
       <h2>📅 Today's Spark</h2>
       <div id="dailyFact" class="fact-card">Click below to unlock today's spark!</div>
       <button id="unlockFact">Unlock</button>
-    </section>
-
-    <section class="quote-section">
-      <h2>💬 Get a Daily Quote</h2>
-      <button id="getQuote">Get Daily Quote</button>
-      <div id="quoteDisplay"></div>
     </section>
 
     <section class="mood-section">
@@ -37,18 +31,24 @@
       <div id="moodFactDisplay"></div>
     </section>
 
+    <section class="quote-section">
+      <h2>💬 Get a Daily Quote</h2>
+      <button id="getQuote">Get Quote</button>
+      <div id="quoteDisplay"></div>
+    </section>
+
     <section class="reminder-section">
       <h2>⏰ Set a Reminder</h2>
-      <label for="reminderTime">Reminder Time (HH:MM):</label>
       <input type="time" id="reminderTime">
       <button id="setReminder">Set Reminder</button>
     </section>
 
-    <section class="favorites-section">
-      <h2>⭐ Save Favorite Facts</h2>
-      <button id="saveFavoriteFact">Save Favorite</button>
-      <div id="favoritesList"></div>
+    <section class="trivia-section">
+      <h2>🔍 Trivia Time</h2>
+      <div id="triviaFact" class="fact-card">Click below to see an interesting trivia fact!</div>
+      <button id="generateTrivia">Show Trivia</button>
     </section>
+
   </div>
 
   <script src="script.js"></script>
