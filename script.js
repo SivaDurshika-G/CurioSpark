@@ -10,17 +10,22 @@ const quotes = [
   "Believe you can and you're halfway there.",
 ];
 
+const triviaFacts = [
+  "Did you know? The Eiffel Tower can be 15 cm taller during summer due to thermal expansion!",
+  "Bananas are technically berries, but strawberries are not!",
+  "A day on Venus is longer than a year on Venus!",
+];
+
 // Unlock Daily Fact
 document.getElementById("unlockFact").addEventListener("click", () => {
-  document.getElementById("dailyFact").innerText =
+  document.getElementById("dailyFact").innerText = 
     "Did you know? The Eiffel Tower can be 15 cm taller during summer due to thermal expansion!";
 });
 
 // Generate Mood Fact
 document.getElementById("generateMoodFact").addEventListener("click", () => {
   const mood = document.getElementById("mood").value;
-  const randomFact =
-    facts[mood][Math.floor(Math.random() * facts[mood].length)];
+  const randomFact = facts[mood][Math.floor(Math.random() * facts[mood].length)];
   document.getElementById("moodFactDisplay").innerText = randomFact;
 });
 
@@ -41,8 +46,8 @@ document.getElementById("setReminder").addEventListener("click", () => {
   }
 });
 
-// Unlock Interesting Fact
-document.getElementById("unlockInterestingFact").addEventListener("click", () => {
-  document.getElementById("interestingFact").innerText =
-    "Did you know? Honey never spoils! Archaeologists have found pots of honey in ancient tombs that are over 3000 years old and still perfectly edible!";
+// Generate Trivia Fact
+document.getElementById("generateTrivia").addEventListener("click", () => {
+  const randomTrivia = triviaFacts[Math.floor(Math.random() * triviaFacts.length)];
+  document.getElementById("triviaFact").innerText = randomTrivia;
 });
