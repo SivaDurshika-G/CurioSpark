@@ -9,8 +9,8 @@
 <body>
   <div class="app-container">
     <header>
-      <h1>🌟 CurioSpark 🌟</h1>
-      <p>Your daily dose of insights and inspiration!</p>
+      <h1>✨ CurioSpark ✨</h1>
+      <p>Your daily dose of curiosity and inspiration!</p>
     </header>
 
     <section class="calendar-section">
@@ -29,6 +29,24 @@
       </select>
       <button id="generateMoodFact">Generate</button>
       <div id="moodFactDisplay"></div>
+    </section>
+
+    <section class="quote-section">
+      <h2>🌟 Daily Quote</h2>
+      <button id="getQuote">Get Daily Quote</button>
+      <div id="quoteDisplay"></div>
+    </section>
+
+    <section class="reminder-section">
+      <h2>⏰ Set a Daily Reminder</h2>
+      <label for="reminderTime">Set Reminder Time:</label>
+      <input type="time" id="reminderTime">
+      <button id="setReminder">Set Reminder</button>
+    </section>
+
+    <section class="favorites-section">
+      <h2>⭐ Saved Favorites</h2>
+      <div id="favoritesList"></div>
     </section>
   </div>
   <script src="script.js"></script>
