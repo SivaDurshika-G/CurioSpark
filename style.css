@@ -78,3 +78,55 @@ body {
     max-width: 600px;
     text-align: center;
 }
+
+/* 1. Animation for the container */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Apply animation to the container */
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    animation: fadeInScale 1.5s ease-in-out;  /* Fade and scale effect */
+}
+
+/* 2. Scale-up effect on hover */
+.container:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 3. Fade-in text animation */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply the text animation to h1 and p tags */
+h1, p {
+    animation: fadeInText 1s ease-out;
+}
+
+/* 4. Smooth scroll for anchor links */
+html {
+    scroll-behavior: smooth;
+}
