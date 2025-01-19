@@ -41,16 +41,25 @@ document.getElementById("setReminder").addEventListener("click", () => {
 });
 
 // Save Favorite Facts
+let favoriteFacts = []; // Store the facts temporarily for the session
 document.getElementById("saveFavoriteFact").addEventListener("click", () => {
   const mood = document.getElementById("mood").value;
   const randomFact =
     facts[mood][Math.floor(Math.random() * facts[mood].length)];
+  
+  // Add the fact to the favoriteFacts array
+  favoriteFacts.push(randomFact);
+  
+  // Update the favorites list on the page
   const favoritesList = document.getElementById("favoritesList");
-  favoritesList.innerHTML += `<p>${randomFact}</p>`;
+  favoritesList.innerHTML = ''; // Clear the list before updating
+  favoriteFacts.forEach(fact => {
+    favoritesList.innerHTML += `<p>${fact}</p>`;
+  });
 });
 
 // Display Saved Favorites on page load
 window.addEventListener("load", () => {
-  const favoritesList = document.getElementById("favoritesList");
-  favoritesList.innerHTML = '';  // Clear existing favorites (if any)
+  // On page load, the favorite facts will already be displayed
+  // because the favoriteFacts array holds the data in the current session
 });
