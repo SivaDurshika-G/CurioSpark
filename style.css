@@ -1,10 +1,23 @@
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, #ffe6b3, #ffcccb);
+  background-color: #ffe6f0; /* Light pink background for the whole page */
   color: #333;
-  text-align: center;
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.box-container {
+  width: 80%;
+  max-width: 900px; /* Maximum width of the content */
+  background-color: #fff; /* White background for the main container */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for the container */
+  padding: 20px;
+  overflow: hidden;
 }
 
 h1 {
@@ -34,6 +47,41 @@ button:hover {
   margin: 20px;
 }
 
+.trivia-section {
+  background-color: #ffebcd; /* Light beige background for trivia section */
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.trivia-section h2 {
+  color: #555;
+}
+
+.trivia-section button {
+  background-color: #ff8c00;
+}
+
+.trivia-section button:hover {
+  background-color: #e07b00;
+}
+
+/* Styles for each section */
+section {
+  margin-bottom: 20px;
+}
+
+section h2 {
+  font-size: 1.8rem;
+  color: #444;
+}
+
+select, input {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
 #favoritesList {
   margin-top: 20px;
 }
@@ -58,4 +106,12 @@ button:hover {
 
 #favoritesList button:hover {
   background: #ff4c4c;
+}
+
+/* Image styling for each section */
+section img {
+  width: 100%;
+  max-width: 200px;
+  margin-top: 10px;
+  border-radius: 5px;
 }
