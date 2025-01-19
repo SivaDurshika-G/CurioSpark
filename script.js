@@ -27,7 +27,6 @@ document.getElementById("generateMoodFact").addEventListener("click", () => {
 // Get Daily Quote
 document.getElementById("getQuote").addEventListener("click", () => {
   const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-  console.log("Quote:", randomQuote); // Debugging log to check if this line works
   document.getElementById("quoteDisplay").innerText = randomQuote;
 });
 
@@ -43,14 +42,18 @@ document.getElementById("setReminder").addEventListener("click", () => {
 });
 
 // Save Favorite Facts
-document.getElementById("generateMoodFact").addEventListener("click", () => {
+document.getElementById("saveFavoriteFact").addEventListener("click", () => {
   const mood = document.getElementById("mood").value;
   const randomFact =
     facts[mood][Math.floor(Math.random() * facts[mood].length)];
-  document.getElementById("moodFactDisplay").innerText = randomFact;
-
   let favorites = localStorage.getItem("favorites") || "";
   favorites += `<p>${randomFact}</p>`;
   localStorage.setItem("favorites", favorites);
+  document.getElementById("favoritesList").innerHTML = favorites;
+});
+
+// Display Saved Favorites on page load
+window.addEventListener("load", () => {
+  const favorites = localStorage.getItem("favorites") || "";
   document.getElementById("favoritesList").innerHTML = favorites;
 });
