@@ -4,16 +4,18 @@ const facts = {
   motivated: ["Believe in yourself!", "Hard work always pays off!"],
 };
 
-document.getElementById("unlockFact").addEventListener("click", () => {
-  document.getElementById("dailyFact").innerText =
-    "Did you know? The Eiffel Tower can be 15 cm taller during summer due to thermal expansion!";
-});
+document.addEventListener("DOMContentLoaded", function () {
+  // Unlock Fact Button
+  document.getElementById("unlockFact").addEventListener("click", () => {
+    document.getElementById("dailyFact").innerText =
+      "Did you know? The Eiffel Tower can be 15 cm taller during summer due to thermal expansion!";
+  });
 
-document.getElementById("generateMoodFact").addEventListener("click", () => {
-  const mood = document.getElementById("mood").value;
-  console.log("Mood selected:", mood); // Debugging line
-  const randomFact =
-    facts[mood][Math.floor(Math.random() * facts[mood].length)];
-  console.log("Random Fact:", randomFact); // Debugging line
-  document.getElementById("moodFactDisplay").innerText = randomFact;
+  // Generate Mood Fact Button
+  document.getElementById("generateMoodFact").addEventListener("click", () => {
+    const mood = document.getElementById("mood").value;
+    const randomFact =
+      facts[mood][Math.floor(Math.random() * facts[mood].length)];
+    document.getElementById("moodFactDisplay").innerText = randomFact;
+  });
 });
